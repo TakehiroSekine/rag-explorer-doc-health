@@ -65,6 +65,23 @@ rag-explorer-doc-health-<版>-win-x64.exe --dir <入力のフォルダ> --out <�
   [Console]::OutputEncoding = [Text.Encoding]::UTF8
   ```
 
+## 処理の時間
+
+- Markdown ・ テキストの文書は、数百の file でも数秒で終わります（試した例: 172 file で 1 秒未満）。
+- PDF は 1 本あたり数秒 ・ 数百 MB のメモリを使うことがあります（試した例: 約 90 頁の PDF 2 本で 9 秒 ・ 約 600 MB）。PDF の多いフォルダは、最初は数本で試してください。
+
+## 試した文書
+
+公開の前に、性質の違う 3 組の公開文書で、誤検出の傾向を確かめました（文書の本文や抜粋はどこにも載せていません）。
+
+| 文書 | 型 | 出典と条件 | 加工 |
+|---|---|---|---|
+| 厚生労働省「モデル就業規則」の 2 つの版（令和 7 年 12 月版 ・ 令和 5 年 7 月版） | 規程集（PDF） | 厚生労働省（https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/zigyonushi/model/index.html）。政府標準利用規約に準拠 | ファイル名だけを変えました |
+| 国税庁「タックスアンサー」の所得控除の節の 23 頁 | FAQ | 国税庁（https://www.nta.go.jp/taxes/shiraberu/taxanswer/code/index.htm）。公共データ利用規約（第 1.0 版）に準拠 | HTML の本文を Markdown に変換しました |
+| Kubernetes の日本語ドキュメント（`content/ja/docs/concepts/`） | 技術文書（Markdown） | The Kubernetes Authors（https://github.com/kubernetes/website）。CC BY 4.0 | 変更していません |
+
+- 識別子（型番 ・ エラーコード）の多い製品マニュアルの型では、試していません。条件の合う公開の文書が見つからなかったためです。
+
 ## 対応する Node の版
 
 保守の続く LTS に限ります: **Node 22 ・ Node 24**。

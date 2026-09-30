@@ -10,7 +10,7 @@ npx rag-explorer-doc-health --dir <入力のフォルダ> --out <出力のフォ
 ```
 
 - 入力のフォルダの下の file（下のフォルダも含む）を読みます。入力のフォルダは読むだけで、書き換えません。
-- 読む形式: Markdown ・ テキスト ・ JSON ・ PowerPoint（PPTX）・ Excel（XLSX）・ PDF。
+- 読む形式: Markdown ・ テキスト ・ JSON ・ Word（DOCX）・ PowerPoint（PPTX）・ Excel（XLSX）・ PDF。旧形式の Word（DOC）は読みません。
   - それ以外の形式は読まずに、読まなかったことを出力に記録します。
   - PDF のうち、スキャンした PDF ・ 文字が化けている PDF ・ 画像の多い PDF は診断しません（出力に理由を記録します）。
 
